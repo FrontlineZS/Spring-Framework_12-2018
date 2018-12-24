@@ -18,13 +18,23 @@ public class Author {
   )
   private Set<Book> books = new HashSet<>();
 
-  public Author(String firstName, String lastName) {
+  public static Author NameAndSurname(String firstName, String lastName) {
+
+      return new Author(firstName, lastName);
+  }
+
+  public static Author NameSurnameAndBooks(String firstName, String lastName, Set<Book> books) {
+
+      return new Author(firstName, lastName, books);
+  }
+
+  private Author(String firstName, String lastName) {
 
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  public Author(String firstName, String lastName, Set<Book> books) {
+  private Author(String firstName, String lastName, Set<Book> books) {
 
     this.firstName = firstName;
     this.lastName = lastName;
